@@ -56,10 +56,7 @@ if submit:
         # Get the response from the Gemini model
         translated_text= GoogleTranslator(source='auto', target='en').translate(input_query)
         response = get_gemini_response(input_query)
-        # if "I cannot answer" in response or "does not" in response:
-        #     response=model.generate_content(input_query)
-        #     st.write(response.text) 
-        # Process and display the response
+        
         bot_response = ""
         for chunk in response:
             bot_response += chunk.text
